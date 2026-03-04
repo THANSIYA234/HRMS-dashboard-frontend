@@ -54,7 +54,7 @@ const EditProfile = () => {
 
       if (profile.profileImage) {
         setPreview(
-          `http://localhost:5000/uploads/profilePics/${profile.profileImage}?t=${Date.now()}`,
+          `${import.meta.env.VITE_API_URL}/uploads/profilePics/${profile.profileImage}?t=${Date.now()}`,
         );
       }
     }
