@@ -60,10 +60,18 @@ export default function Login() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        px: 2,
       }}
     >
-      <form onSubmit={handleLogin}>
-        <Card sx={{ width: 380, p: 3, borderRadius: 3, boxShadow: 6 }}>
+      <form onSubmit={handleLogin} style={{ maxWidth: 400, width: "100%" }}>
+        <Card
+          sx={{
+            width: "100%",
+            p: { xs: 2, sm: 3 },
+            borderRadius: 3,
+            boxShadow: 6,
+          }}
+        >
           <CardContent>
             <Typography variant="h5" align="center" fontWeight={600} mb={2}>
               Login
@@ -111,7 +119,12 @@ export default function Login() {
               </Link>
             </Box>
 
-            <Button fullWidth variant="contained" sx={{ mt: 2 }} type="submit">
+            <Button
+              fullWidth
+              variant="contained"
+              sx={{ mt: 2, py: 1.2 }}
+              type="submit"
+            >
               Login
             </Button>
           </CardContent>
