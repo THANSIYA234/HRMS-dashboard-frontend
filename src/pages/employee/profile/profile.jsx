@@ -90,7 +90,7 @@ const Profile = () => {
               <Avatar
                 src={
                   user.profileImage
-                    ? `http://localhost:5000/uploads/profilePics/${user.profileImage}?t=${Date.now()}`
+                    ? `${import.meta.env.VITE_API_URL}/uploads/profilePics/${user.profileImage}?t=${Date.now()}`
                     : ""
                 }
                 sx={{
