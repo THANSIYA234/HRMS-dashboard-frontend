@@ -1,0 +1,9 @@
+import { useQuery } from "@tanstack/react-query";
+import { getAdminProfile } from "../../services/admin/profile.service";
+
+export const useAdminProfile = () => {
+  return useQuery({
+    queryKey: ["adminProfile"],
+    queryFn: getAdminProfile,
+  });
+};
