@@ -80,11 +80,13 @@ function AttendanceTable({ attendance = [], onEdit, showActions = true }) {
                       <Avatar
                         src={
                           emp.profileImage
-                            ? `http://localhost:5000/uploads/profilePics/${emp.profileImage}`
-                            : null
+                            ? emp.profileImage.startsWith("uploads")
+                              ? `${import.meta.env.VITE_API_URL}/${emp.profileImage}`
+                              : `${import.meta.env.VITE_API_URL}/uploads/profilePics/${emp.profileImage}`
+                            : ""
                         }
                       >
-                        {emp.name?.[0] || "?"}
+                        {emp.name?.[0]}
                       </Avatar>
                       <Typography noWrap>
                         {emp.name || "Unknown Employee"}
