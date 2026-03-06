@@ -79,7 +79,7 @@ const EmployeeTable = ({ employees = [] }) => {
                   <Avatar
                     src={
                       emp.profileImage
-                        ? `${import.meta.env.BACKEND_URL}/uploads/profilePics/${emp.profileImage}`
+                        ? `${import.meta.env.VITE_API_URL}/${emp.profileImage}`
                         : null
                     }
                   >

@@ -64,7 +64,7 @@ const LeaveTable = ({ leaves = [], onApprove, onReject }) => {
                     <Avatar
                       src={
                         employee.profileImage
-                          ? `${import.meta.env.BACKEND_URL}/uploads/profilePics/${employee.profileImage}`
+                          ? `${import.meta.env.VITE_API_URL}/${employee.profileImage}`
                           : null
                       }
                     >
