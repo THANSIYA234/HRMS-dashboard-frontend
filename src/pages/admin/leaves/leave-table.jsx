@@ -40,7 +40,10 @@ const LeaveTable = ({ leaves = [], onApprove, onReject }) => {
   }
 
   return (
-    <TableContainer component={Paper} sx={{ borderRadius: 3 }}>
+    <TableContainer
+      component={Paper}
+      sx={{ borderRadius: 3, overflowX: "auto" }}
+    >
       <Table>
         <TableHead>
           <TableRow sx={{ backgroundColor: "#f9fafb", borderTop: "#E5E7EB" }}>
@@ -64,11 +67,13 @@ const LeaveTable = ({ leaves = [], onApprove, onReject }) => {
                     <Avatar
                       src={
                         employee.profileImage
-                          ? `${import.meta.env.VITE_API_URL}/${employee.profileImage}`
-                          : null
+                          ? employee.profileImage.startsWith("uploads")
+                            ? `${import.meta.env.VITE_API_URL}/${employee.profileImage}`
+                            : `${import.meta.env.VITE_API_URL}/uploads/profilePics/${employee.profileImage}`
+                          : ""
                       }
                     >
-                      {employee?.name?.[0] || "?"}
+                      {employee.name?.[0]}
                     </Avatar>
 
                     <Typography noWrap>

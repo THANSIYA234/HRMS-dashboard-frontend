@@ -65,7 +65,7 @@ const AttendanceTable = () => {
         sx={{
           border: "1px solid #E5E7EB",
           borderRadius: 1.5,
-          overflow: "hidden",
+          overflowX: "auto",
         }}
       >
         <Table>

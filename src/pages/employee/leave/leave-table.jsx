@@ -140,7 +140,13 @@ const LeaveTable = () => {
 
   return (
     <>
-      <TableContainer sx={{ border: "1px solid #E5E7EB", borderRadius: 1.5 }}>
+      <TableContainer
+        sx={{
+          border: "1px solid #E5E7EB",
+          borderRadius: 1.5,
+          overflowX: "auto",
+        }}
+      >
         <Table>
           <TableHead>
             <TableRow sx={{ backgroundColor: "#f9fafb" }}>

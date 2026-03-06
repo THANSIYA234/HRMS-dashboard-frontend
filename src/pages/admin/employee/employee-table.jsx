@@ -57,7 +57,7 @@ const EmployeeTable = ({ employees = [] }) => {
       sx={{
         border: "1px solid #E5E7EB",
         borderRadius: 1.5,
-        overflow: "hidden",
+        overflowX: "auto",
       }}
     >
       <Table>
@@ -79,11 +79,13 @@ const EmployeeTable = ({ employees = [] }) => {
                   <Avatar
                     src={
                       emp.profileImage
-                        ? `${import.meta.env.VITE_API_URL}/${emp.profileImage}`
-                        : null
+                        ? emp.profileImage.startsWith("uploads")
+                          ? `${import.meta.env.VITE_API_URL}/${emp.profileImage}`
+                          : `${import.meta.env.VITE_API_URL}/uploads/profilePics/${emp.profileImage}`
+                        : ""
                     }
                   >
-                    {emp.name[0]}
+                    {emp.name?.[0]}
                   </Avatar>
                   <Box>
                     <Typography fontWeight={600}>{emp.name}</Typography>
