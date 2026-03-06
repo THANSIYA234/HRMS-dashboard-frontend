@@ -54,7 +54,7 @@ const EditProfile = () => {
 
       if (profile.profileImage) {
         setPreview(
-          `${import.meta.env.VITE_API_URL}/uploads/profilePics/${profile.profileImage}?t=${Date.now()}`,
+          `${import.meta.env.BACKEND_URL}/uploads/profilePics/${profile.profileImage}?t=${Date.now()}`,
         );
       }
     }
@@ -114,7 +114,7 @@ const EditProfile = () => {
                   src={
                     preview ||
                     (profile.profileImage
-                      ? `${import.meta.env.VITE_API_URL}/uploads/profilePics/${profile.profileImage}?t=${Date.now()}`
+                      ? `${import.meta.env.BACKEND_URL}/uploads/profilePics/${profile.profileImage}?t=${Date.now()}`
                       : "")
                   }
                   sx={{ width: 90, height: 90 }}
