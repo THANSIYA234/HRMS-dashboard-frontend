@@ -32,10 +32,11 @@ Email: `demo@admin.com`
 Password: `Demo@2026!`
 
 > Demo Admin has restricted permissions.
-> Demo Employee
-> Email:`demo-user@gmail.com`
 
-## password:`demouser`
+### 👤 Demo Employee
+
+Email: `demo-user@gmail.com`  
+Password: `demouser`
 
 ## 🛠 Tech Stack
 
