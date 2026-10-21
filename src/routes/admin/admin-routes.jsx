@@ -13,12 +13,13 @@ import LeavePage from "../../pages/admin/leaves/leave";
 import CreateEmployeePage from "../../pages/admin/employee/create-employee";
 import NotificationPage from "../../pages/notification";
 import AdminProfile from "../../pages/admin/profile/admin-profile";
+import NotFound from "../../pages/common/not-found";
 
 const AdminRoutes = () => {
   return (
     <Routes>
       <Route element={<AdminRoute />}>
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route element={<AdminLayout />}>
           <Route index element={<DashboardPage />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="employees" element={<EmployeesPage />} />
@@ -31,6 +32,7 @@ const AdminRoutes = () => {
           <Route path="leave" element={<LeavePage />} />
           <Route path="notifications" element={<NotificationPage />} />
           <Route path="profile" element={<AdminProfile />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Route>
     </Routes>

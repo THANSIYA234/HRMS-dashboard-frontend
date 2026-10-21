@@ -14,7 +14,7 @@ import { useGetAttendanceHistory } from "../../../queries/employee/attendance.qu
 
 const AttendanceTable = () => {
   const { data, isLoading } = useGetAttendanceHistory();
-  const history = data?.attendence || [];
+  const history = data?.attendance || [];
 
   const getStatusColor = (status) => {
     switch (status) {

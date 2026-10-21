@@ -29,7 +29,6 @@ export const Navbar = () => {
   const { data: unreadData } = useGetUnreadCount();
 
   const unreadCount = unreadData?.count ?? 0;
-  console.log(unreadCount);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -41,8 +40,8 @@ export const Navbar = () => {
     handleMenuClose();
     try {
       await logOut();
-    } catch (error) {
-      console.error("Logout error", error);
+    } catch {
+      // surfaced by global error handler / toast layer
     } finally {
       logout();
       navigate("/");

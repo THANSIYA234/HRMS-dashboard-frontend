@@ -10,7 +10,6 @@ export default function NotificationPage() {
   const navigate = useNavigate();
   const { data, isLoading } = useFetchNotifications();
   const notifications = data?.notifications || [];
-  console.log("Notifications", notifications);
 
   const markAsRead = useMarkNotificationRead();
 

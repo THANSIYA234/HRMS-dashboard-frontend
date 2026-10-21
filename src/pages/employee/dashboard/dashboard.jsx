@@ -14,7 +14,7 @@ import {
 
 const Dashboard = () => {
   const { data } = useGetTodayAttendance();
-  const attendence = data?.attendence;
+  const attendance = data?.attendance;
   const { data: leaves } = useFetchMyLeaves();
   const { data: balanceLeave } = useGetBalanceLeave();
 
@@ -28,7 +28,7 @@ const Dashboard = () => {
           <Grid size={{ xs: 12, md: 3 }}>
             <StatCard
               title="Today Status"
-              value={attendence?.status || "absent"}
+              value={attendance?.status || "absent"}
               sx={{ color: "#2e7d32" }}
               icon={<CheckCircle />}
               iconBg="#e8f5e9"
@@ -39,7 +39,7 @@ const Dashboard = () => {
           <Grid size={{ xs: 12, md: 3 }}>
             <StatCard
               title="Hours Worked"
-              value={`${attendence?.workHours || 0} hrs`}
+              value={`${attendance?.workHours || 0} hrs`}
               icon={<ClockIcon />}
               iconBg="#fff3e0"
               color="#ed6c02"

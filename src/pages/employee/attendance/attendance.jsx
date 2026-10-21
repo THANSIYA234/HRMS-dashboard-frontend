@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import PageTitleBar from "../../../components/common/page-title-bar";
 import AttendanceTable from "./attendance-table";
 import TodayPunchBox from "./punch-box";
@@ -14,7 +14,7 @@ const Attendance = () => {
   const punchOutMutation = useCreatePunchOut();
   const { data } = useGetTodayAttendance();
 
-  const attendance = data?.attendence;
+  const attendance = data?.attendance;
 
   const punchInTime = attendance?.punchIn ? new Date(attendance.punchIn) : null;
 

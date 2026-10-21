@@ -47,7 +47,7 @@ const LeaveTable = () => {
     { enabled: !!selectedId },
   );
   const updateLeaveMutation = useUpdateLeave();
-  const deleteLeaveMutation = useDeleteLeave(selectedId);
+  const deleteLeaveMutation = useDeleteLeave();
 
   const leaves = data?.leaves || [];
   const selectedLeave = leaveData?.leave;
@@ -121,7 +121,6 @@ const LeaveTable = () => {
           setOpenDialog(false);
         },
         onError: (err) => {
-          console.error(err);
           alert(err.response?.data?.message || "Update failed");
         },
       },

@@ -16,7 +16,6 @@ const LeavePage = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const leavesQuery = useGetLeaves(page + 1, rowsPerPage, filters);
-  console.log("Leaves Data:", leavesQuery.data);
   const updateLeaveStatusMutation = useUpdateLeaveStatus();
 
   const handleFilterChange = (name, value) => {

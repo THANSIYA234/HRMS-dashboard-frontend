@@ -26,10 +26,11 @@ export const useFetchMyLeaves = () => {
   });
 };
 
-export const useGetLeaveById = (id) => {
+export const useGetLeaveById = (id, options) => {
   return useQuery({
     queryKey: ["leave", id],
     queryFn: () => getLeaveById(id),
+    ...options,
   });
 };
 

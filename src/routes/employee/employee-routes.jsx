@@ -10,6 +10,7 @@ import ApplyLeavePage from "../../pages/employee/leave/leave-request";
 import NotificationPage from "../../pages/notification";
 import ChangePasswordPage from "../../pages/employee/settings/change-password";
 import SettingsPage from "../../pages/employee/settings/settings";
+import NotFound from "../../pages/common/not-found";
 
 const EmployeeRoutes = () => {
   return (
@@ -29,6 +30,7 @@ const EmployeeRoutes = () => {
             path="settings/change-password"
             element={<ChangePasswordPage />}
           />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Route>
     </Routes>

@@ -89,7 +89,7 @@ const EmployeeDetailsPage = () => {
                 <Avatar
                   src={
                     employee.profileImage
-                      ? `http://localhost:5000/${employee.profileImage}`
+                      ? `${import.meta.env.VITE_API_BASE?.replace(/\/api$/, "") || ""}/${employee.profileImage}`
                       : null
                   }
                   sx={{ width: 100, height: 100 }}

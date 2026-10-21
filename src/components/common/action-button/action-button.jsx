@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import actionButton from ".";
 
 const ActionButton = ({ icon, label, color, onClick }) => {
   return (

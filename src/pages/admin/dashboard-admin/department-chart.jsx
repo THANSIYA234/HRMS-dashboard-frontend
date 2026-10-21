@@ -11,7 +11,6 @@ import { useGetDepartmentStats } from "../../../queries/admin/department.query";
 
 const DepartmentChart = () => {
   const { data = [] } = useGetDepartmentStats();
-  console.log("Department Data:", data);
 
   return (
     <Card sx={{ height: 280 }}>

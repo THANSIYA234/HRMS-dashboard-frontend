@@ -1,16 +1,9 @@
-import {
-  keepPreviousData,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   deleteAttendance,
   getAllAttendance,
-  getAttendanceByFilters,
   getAttendanceStats,
   getAttendanceTrends,
-  todayAttendance,
   updateAttendance,
 } from "../../services/admin/attendance.service";
 
@@ -36,13 +29,6 @@ export const useUpdateAttendance = () => {
       queryClient.invalidateQueries({ queryKey: ["attendance"] });
     },
   });
-};
-export const useTodayAttendanceSnapshot = () => {
-  return useQuery({
-    queryKey: ["attendance", "today-snapshot"],
-    queryFn: todayAttendance,
-  });
-  keepPreviousData: true;
 };
 
 export const useGetAttendanceStats = () => {

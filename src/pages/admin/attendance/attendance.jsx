@@ -7,7 +7,6 @@ import { useState } from "react";
 import {
   useGetAllAttendance,
   useGetAttendanceStats,
-  useTodayAttendanceSnapshot,
   useUpdateAttendance,
 } from "../../../queries/admin/attendance.query";
 
@@ -59,8 +58,8 @@ const AttendancePage = () => {
           setModalOpen(false);
           setEditRecord(null);
         },
-        onError: (err) => {
-          console.error("Update failed:", err);
+        onError: () => {
+          // surfaced via global toast / error handler
         },
       },
     );

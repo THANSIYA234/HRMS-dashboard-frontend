@@ -11,7 +11,6 @@ import { useGetAttendanceTrends } from "../../../queries/admin/attendance.query"
 
 const AttendanceTrendChart = () => {
   const { data = [] } = useGetAttendanceTrends();
-  console.log("Attendance Trend Data:", data);
   return (
     <Card sx={{ height: 280 }}>
       <CardContent sx={{ height: "100%" }}>

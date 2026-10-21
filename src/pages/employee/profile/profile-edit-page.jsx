@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Avatar,
   Box,
@@ -25,7 +25,10 @@ const EditProfile = () => {
   const { data: profileData, isLoading } = useFetchMyProfile();
   const updateProfile = useUpdateMyProfile();
 
-  const profile = profileData?.employee || profileData || {};
+  const profile = useMemo(
+    () => profileData?.employee || profileData || {},
+    [profileData],
+  );
 
   // Form state
   const [form, setForm] = useState({
@@ -58,7 +61,7 @@ const EditProfile = () => {
         );
       }
     }
-  }, [profileData]);
+  }, [profile]);
 
   const handleChange = (e) => {
     setForm((prev) => ({
@@ -86,8 +89,6 @@ const EditProfile = () => {
     if (profileFile) {
       formData.append("profileImage", profileFile);
     }
-    console.log("BODY:", formData);
-    console.log("FILE:", profileFile);
 
     updateProfile.mutate(formData, {
       onSuccess: () => {

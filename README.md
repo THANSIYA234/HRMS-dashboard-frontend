@@ -1,90 +1,94 @@
-# HRMS Dashboard (MERN Stack)
+# HRMS Dashboard
 
-A full-stack Human Resource Management System (HRMS) built using the MERN stack.  
-This application allows administrators to manage employees, attendance, departments, leaves, and notifications.
+A Human Resource Management System (HRMS) built with React 19 + Vite + Material UI v7 on the frontend and Express 5 + Mongoose 9 on the backend. Supports admin and employee roles with JWT-based authentication, attendance tracking, leave management, departments, employee CRUD, and an in-app notification feed.
 
-## 🔗 Live Demo
+## Live demo
 
-Frontend: https://hrmsdashboardfrontend.netlify.app  
-Backend: https://hrms-dashboard-backend.onrender.com
+- Frontend: https://hrmsdashboardfrontend.netlify.app
+- Backend: https://hrms-dashboard-backend.onrender.com
 
----
+## Features
 
-## ✨ Features
-
-- Admin & Employee authentication (JWT based)
-- Employee management (CRUD)
+- Role-based authentication (admin, employee) with refresh-token rotation
+- Employee CRUD with profile image upload
 - Department management
-- Attendance tracking
-- Leave management system
-- Notifications
-- Role-based dashboard access
-- Secure API with refresh token handling
-- Responsive UI (Material UI)
+- Punch-in / punch-out attendance with daily stats and 30-day trends
+- Leave apply / approve / reject workflow with balance tracking
+- In-app notification feed
+- Material UI dashboard with charts (recharts)
 
----
-
-## 🧪 Demo Credentials
-
-### 👤 Demo Admin (Read-Only)
-
-Email: `demo@admin.com`  
-Password: `Demo@2026!`
-
-> Demo Admin has restricted permissions.
-
-### 👤 Demo Employee
-
-Email: `demo-user@gmail.com`  
-Password: `demouser`
-
-## 🛠 Tech Stack
+## Tech stack
 
 **Frontend**
 
-- React (Vite)
-- Material UI
-- Axios
-- React Router
+- React 19, Vite 7
+- Material UI v7, Emotion
+- React Router v6, React Query v5
+- Axios, dayjs / date-fns, recharts
 
-**Backend**
+**Backend** (see `hrms_backend/README.md`)
 
-- Node.js
-- Express.js
-- MongoDB (Atlas)
-- JWT Authentication
-- CORS & Cookie-based refresh tokens
+- Node.js, Express 5, Mongoose 9
+- JWT (access + refresh), bcrypt, multer, cookie-parser
 
----
+## Setup
 
-## ⚙️ Environment Variables
+Prerequisites: Node.js 20+, npm 10+, a running MongoDB instance (local or Atlas).
 
-### Frontend (.env)
+```bash
+# 1. Clone both repos
+git clone <frontend-repo> hrms-dashboard
+git clone <backend-repo> hrms_backend
 
-VITE_API_URL=https://hrms-dashboard-backend-production.up.railway.app/api
-
-### Backend (.env)
-
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-PORT=5000
-
----
-
-## 🚀 Run Locally
-
-### Backend
-
+# 2. Backend
+cd hrms_backend
+cp .env.example .env        # fill in MONGO_URI, JWT_SECRET, REFRESH_SECRET
 npm install
-npm run dev
+npm run dev                 # http://localhost:5000
 
-### Frontend
-
+# 3. Frontend (in a new terminal)
+cd ../hrms-dashboard
+cp .env.example .env        # point VITE_API_BASE at your backend
 npm install
-npm run dev
+npm run dev                 # http://localhost:5173
+```
 
----
+## Environment variables
 
-## 📌 Author
+See `.env.example` for the full list. Each variable is documented inline.
+
+## Available scripts
+
+| Script | What it does |
+|---|---|
+| `npm run dev` | Start Vite dev server with HMR |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run Vitest once |
+| `npm run test:watch` | Run Vitest in watch mode |
+| `npm run coverage` | Run Vitest with coverage |
+
+## Project structure
+
+```
+src/
+├── api/          # axios instance
+├── auth/         # login page
+├── components/   # shared + role-specific UI
+├── contexts/     # React contexts (auth, …)
+├── layouts/      # admin / employee shells
+├── pages/        # route-level pages
+├── queries/      # React Query hooks (per role)
+├── services/     # axios calls (per role)
+├── test/         # Vitest setup + regression tests
+└── utils/        # small helpers
+```
+
+## License
+
+ISC — see `LICENSE` if present.
+
+## Author
 
 Thansiya P

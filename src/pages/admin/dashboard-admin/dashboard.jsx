@@ -17,7 +17,7 @@ import {
 } from "../../../queries/admin/attendance.query";
 import { useGetDepartments } from "../../../queries/admin/department.query";
 import AttendanceTable from "../attendance/attendance-table";
-import AttendanceTrendChart from "./attendence-chart";
+import AttendanceTrendChart from "./attendance-chart";
 
 const DashboardPage = () => {
   const { data: stats } = useGetAttendanceStats();

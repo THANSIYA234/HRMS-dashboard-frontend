@@ -52,7 +52,6 @@ const CreateEmployeePage = () => {
       };
 
       const userRes = await registerUser(userPayload);
-      console.log("registerUser response:", userRes);
 
       const userId =
         userRes?.userWithoutPassword?._id ||
@@ -83,7 +82,6 @@ const CreateEmployeePage = () => {
       //SUCCESS
       navigate("/admin/employees");
     } catch (error) {
-      console.error(error);
       alert(
         error?.response?.data?.message ||
           "Something went wrong while creating employee",

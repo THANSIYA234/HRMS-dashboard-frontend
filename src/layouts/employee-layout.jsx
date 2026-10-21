@@ -6,7 +6,6 @@ import { Navbar } from "../components/common/navbar";
 import EmployeeSidebar from "../components/employee/employee-sidebar";
 
 const EmployeeLayout = () => {
-  console.log("Rendering EmployeeLayout");
   return (
     <Box sx={{ display: "flex" }}>
       <EmployeeSidebar />

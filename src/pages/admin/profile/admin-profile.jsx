@@ -11,10 +11,10 @@ import {
 import { useAdminProfile } from "../../../queries/admin/profile.queryjs";
 
 const AdminProfile = () => {
-  const { data, loading, error } = useAdminProfile();
+  const { data, isLoading, isError } = useAdminProfile();
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error loading profile</div>;
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error loading profile</div>;
 
   return (
     <Box

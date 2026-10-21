@@ -24,6 +24,13 @@ export default defineConfig([
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-console': ['error', { allow: ['warn', 'error'] }],
+      // Stricter React Compiler / hooks rules surface audit items (P4
+      // `Date.now()` cache-buster, setState-in-effect patterns) tracked
+      // for Phase H6 (architecture cleanup). Re-enable per-file as that
+      // work lands.
+      'react-hooks/purity': 'off',
+      'react-hooks/set-state-in-effect': 'off',
     },
   },
 ])
